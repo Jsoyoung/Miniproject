@@ -13,5 +13,5 @@ for i in range(301,375):
     result=pd.DataFrame(content['tbLnOpendataRtmsV']['row'])
     df=pd.concat([df,result])
 df=df.reset_index(drop=True)
-df.to_csv('.sample.csv',index=False)
+df.to_csv('301-375.csv',index=False)
 
