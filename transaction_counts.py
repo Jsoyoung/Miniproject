@@ -26,6 +26,8 @@ def groupby_house_type(df):
 
 
 
+
+
 def home_page(df):
     df = load_data()
     st.subheader("서울시 자치구별 거래건수")
@@ -49,14 +51,12 @@ def home_page(df):
     st.text(result_text)
 
     st.markdown('---')
-
-    
     
     # 건물 용도별 최고가와 최저가 출력
     st.markdown(':star: :green[**주택 용도별 거래가격 정보**]')
     result_df = groupby_house_type(df)
     st.dataframe(result_df)
-    
+
 
 
 def details_page(df):
@@ -98,9 +98,6 @@ def details_page(df):
 
 
 
-
-
-
 def main():
     df = load_data()
     st.sidebar.title("대시보드 메뉴")
@@ -112,13 +109,9 @@ def main():
     if selected == '홈':
         home_page(df)
     elif selected == '자세히 보기':
-        details_page(df)
-        
+        details_page(df)        
 
     
-
-
-
 
 if __name__ == "__main__":
     main()
