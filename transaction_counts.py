@@ -7,7 +7,7 @@ import plotly.express as px
 
 
 
-def main():
+def home_page(df):
     df = load_data()
     st.subheader("서울시 자치구별 거래건수")
     st.markdown(''':green[서울시 부동산 실거래가 정보 기준] :green[**(접수 기간 : 2020~2023년도)**]''')
@@ -31,6 +31,9 @@ def main():
 
     st.markdown('---')
 
+
+
+def details_page(df):
     st.subheader('자치구 용도별 거래건수 막대그래프')
 
     # 선택한 지역구 및 용도에 따른 데이터 필터링
@@ -67,6 +70,19 @@ def main():
     st.markdown(''':star: :green[**거래량 3순위**]''')
     st.dataframe(transaction_counts.head(3))
 
+
+
+def main():
+    df = load_data()
+    st.sidebar.title("대시보드 메뉴")
+
+    with st.sidebar:
+        selected = st.sidebar.selectbox("대시보드 메뉴", ['홈', '자세히 보기'])
+
+    if selected == '홈':
+        home_page(df)
+    elif selected == '자세히 보기':
+        details_page(df)
 
 
 
