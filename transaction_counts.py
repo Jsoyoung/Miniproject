@@ -4,6 +4,25 @@ import streamlit as st
 import pandas as pd
 from data_collect import load_data
 import plotly.express as px
+import plotly.graph_objs as go
+
+
+def groupby_house_type(df):
+    def get_building_name(x):
+        if pd.notnull(x['BLDG_NM']):
+            return f"{x['SGG_NM']} {x['BJDONG_NM']} {x['BLDG_NM']}"
+        else:
+            return f"{x['SGG_NM']} {x['BJDONG_NM']}"
+    
+    # 건물 용도별로 그룹화하여 거래금액의 최고가와 최저가, 그리고 건물명을 계산
+    result = df.groupby('HOUSE_TYPE').apply(lambda x: pd.Series({
+        '최고가': x.loc[x['OBJ_AMT'].idxmax(), 'OBJ_AMT'],
+        '최고가 정보': get_building_name(x.loc[x['OBJ_AMT'].idxmax()]),
+        '최저가': x.loc[x['OBJ_AMT'].idxmin(), 'OBJ_AMT'],
+        '최저가 정보': get_building_name(x.loc[x['OBJ_AMT'].idxmin()])
+    })).reset_index()
+    
+    return result
 
 
 
@@ -31,6 +50,13 @@ def home_page(df):
 
     st.markdown('---')
 
+    
+    
+    # 건물 용도별 최고가와 최저가 출력
+    st.markdown(':star: :green[**주택 용도별 거래가격 정보**]')
+    result_df = groupby_house_type(df)
+    st.dataframe(result_df)
+    
 
 
 def details_page(df):
@@ -72,17 +98,24 @@ def details_page(df):
 
 
 
+
+
+
 def main():
     df = load_data()
     st.sidebar.title("대시보드 메뉴")
 
     with st.sidebar:
         selected = st.sidebar.selectbox("대시보드 메뉴", ['홈', '자세히 보기'])
+        st.divider()
 
     if selected == '홈':
         home_page(df)
     elif selected == '자세히 보기':
         details_page(df)
+        
+
+    
 
 
 
