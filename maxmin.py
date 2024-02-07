@@ -5,11 +5,6 @@ import pandas as pd
 from data_collect import load_data
 
 
-
-
-
-
-
 def main():
     df = load_data()
 
@@ -46,37 +41,35 @@ def main():
 
     st.subheader("서울시 건물용도별 최고가/최소가 정보")
 
-
-    
-
-
-
     # 칸 생성
     col5, col6, col7, col8 = st.columns(4)
 
     # 칸에 내용 추가
     with col5:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["아파트"]["max_amount"]:,.0f}만원<h5><h6>{values["아파트"]["max_location"]}<br>{values["아파트"]["max_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["아파트"]["max_amount"]:,.0f}만원<h5><h6>{values["아파트"]["max_location"]}<br>{values["아파트"]["max_building"]}</h6></div>', unsafe_allow_html=True)
     with col6:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["오피스텔"]["max_amount"]:,.0f}만원<h5><h6>{values["오피스텔"]["max_location"]}<br>{values["오피스텔"]["max_building"]}</h6></div>', unsafe_allow_html=True)  
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">오피스텔</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["오피스텔"]["max_amount"]:,.0f}만원<h5><h6>{values["오피스텔"]["max_location"]}<br>{values["오피스텔"]["max_building"]}</h6></div>', unsafe_allow_html=True)  
     with col7:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["연립다세대"]["max_amount"]:,.0f}만원<h5><h6>{values["연립다세대"]["max_location"]}<br>{values["연립다세대"]["max_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">연립다세대</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["연립다세대"]["max_amount"]:,.0f}만원<h5><h6>{values["연립다세대"]["max_location"]}<br>{values["연립다세대"]["max_building"]}</h6></div>', unsafe_allow_html=True)
     with col8:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["단독다가구"]["max_amount"]:,.0f}만원<h5><h6>{values["단독다가구"]["max_location"]}<br>{values["단독다가구"]["max_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">단독다가구</h6><h5 style="text-align: center; color: blue;">최고가</h5><h5 style = "text-align: center;">{values["단독다가구"]["max_amount"]:,.0f}만원<h5><h6>{values["단독다가구"]["max_location"]}<br>{values["단독다가구"]["max_building"]}</h6></div>', unsafe_allow_html=True)
     
+
     st.markdown("")
+
+
     # 칸 생성
     col9, col10, col11, col12 = st.columns(4)
+
     with col9:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["아파트"]["min_amount"]:,.0f}만원<h5><h6>{values["아파트"]["min_location"]}<br>{values["아파트"]["min_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">아파트</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["아파트"]["min_amount"]:,.0f}만원<h5><h6>{values["아파트"]["min_location"]}<br>{values["아파트"]["min_building"]}</h6></div>', unsafe_allow_html=True)
     with col10:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">오피스텔</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["오피스텔"]["min_amount"]:,.0f}만원<h5><h6>{values["오피스텔"]["min_location"]}<br>{values["오피스텔"]["min_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">오피스텔</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["오피스텔"]["min_amount"]:,.0f}만원<h5><h6>{values["오피스텔"]["min_location"]}<br>{values["오피스텔"]["min_building"]}</h6></div>', unsafe_allow_html=True)
     with col11:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">연립다세대</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["연립다세대"]["min_amount"]:,.0f}만원<h5><h6>{values["연립다세대"]["min_location"]}<br>{values["연립다세대"]["min_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">연립다세대</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["연립다세대"]["min_amount"]:,.0f}만원<h5><h6>{values["연립다세대"]["min_location"]}<br>{values["연립다세대"]["min_building"]}</h6></div>', unsafe_allow_html=True)
     with col12:
-        st.markdown(f'<div><h6 style="text-align: center; color: gray;">단독다가구</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["단독다가구"]["min_amount"]:,.0f}만원<h5><h6>{values["단독다가구"]["min_location"]}<br>{values["단독다가구"]["min_building"]}</h6></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style = "height: 220px; border: 1px solid white; padding: 10px; box-shadow: 2px,2px,5px rgba(0,0,0,0.1); "><h6 style="text-align: center; color: gray;">단독다가구</h6><h5 style="text-align: center; color: red;">최저가</h5><h5 style = "text-align: center;">{values["단독다가구"]["min_amount"]:,.0f}만원<h5><h6>{values["단독다가구"]["min_location"]}<br>{values["단독다가구"]["min_building"]}</h6></div>', unsafe_allow_html=True)
+
+
 if __name__ == "__main__":
     main()
-
-
-
