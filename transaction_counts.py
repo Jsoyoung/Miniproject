@@ -26,8 +26,6 @@ def groupby_house_type(df):
 
 
 
-
-
 def home_page(df):
     df = load_data()
     st.subheader("서울시 자치구별 거래건수")
