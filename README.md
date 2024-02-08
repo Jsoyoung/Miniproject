@@ -107,7 +107,7 @@ streamlit run app.py
 - email : sspkl124@gmail.com
 
 
-# 발표자료 PDF 
+## 발표자료 PDF 
  + [발표 PDF](발표자료.pdf)
 
 
