@@ -77,10 +77,10 @@ streamlit run app.py
     - 한눈에 보기 : 거래금액 분석, 월별 거래 건수 추이, 건물용도별 거래건 시각화
     - 키워드 상세 조회 : 물건금액/건물유형/지번구분명/거래연도/건축연도 키워드 선택하여 데이터 조회 가능
     - 타 법정동 비교 : 선택한 지역과 동일한 자치구내 다른 동과 거래정보 비교(옵션: 건물 정보/건물 가격)
-- `sgg_nm_sort: 자치구`
-- `selected_sgg_nm: 선택된 자치구 `
-- `selected_bjdong_nm: 선택된 법정동`
-- `filtered_data: 선택된 자치구와 법정동 데이터`
+- `sgg_nm_sort` : 자치구
+- `selected_sgg_nm` : 선택된 자치구
+- `selected_bjdong_nm` : 선택된 법정동
+- `filtered_data` : 선택된 자치구와 법정동 데이터
 
 - 결과 이미지
 <p align = "center" width = "100%">
