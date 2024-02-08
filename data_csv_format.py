@@ -1,9 +1,9 @@
 import requests
 import json
 import pandas as pd
+import streamlit as st 
 
-SERVICE_KEY = "6a4e556e6b6568663433776e41656b"
-
+SERVICE_KEY = st.secrets["api_credentials"]["SEOUL_PUBLIC_API"]
 df=None
 for i in range(301,375):
     URL=f'http://openapi.seoul.go.kr:8088/{SERVICE_KEY}/json/tbLnOpendataRtmsV/{1+(i-1)*1000}/{i*1000}/'
