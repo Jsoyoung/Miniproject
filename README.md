@@ -1,4 +1,12 @@
-# 부동산 트래커: 서울
+# 부동산 적정가격책정 프로젝트 [부동산 트래커: 서울]
+-------
+
+## 기획 배경
+- 기획시점일 기준 국토교통부와 한국부동산원이 발표하는 주택 거래량은 거래 당사자가 시·군·구청에 거래신고를 한 '신고일' 기준으로 수치가 집계되지만, 서울시가 서울부동산정보광장에 공개하는 통계는 매일 갱신되는 국토부 실거래가신고 자료를 '계약일' 기준으로 따로 분류한 수치로 제공되고 있습니다. 즉 아직 통계 정보에 혼란이 존재합니다. 
+- 정확한 부동산 실거래가 자료 파악은 시장가격 형성에 필수적인 절차입니다.
+- 따라서 지역별/건물용도별로 서울시 부동산 거래 동향을 파악할 수 있는 사이트에 대한 수요가 높아질 것으로 예상하게 되었습니다.
+- 이러한 현황에 대한 자료조사를 바탕으로 사용자가 서울시의 전반적인 부동산 상황을 확인하고, 필요한 정보를 카테고리별로 분류해 확인할 수 있는 대시보드를 기획하게 되었습니다.
+
 
 ## 프로젝트 목적
 - 본 프로젝트의 목적은 서울시 부동산 실거래가 데이터를 바탕으로 개발된 대시보드를 통해 부동산 가격을 책정하는 판매자가 유의미한 정보를 얻도록 하는 것입니다.
@@ -6,12 +14,12 @@
 
 
 ## 팀원 소개
-- 나한울 팀장 : 
-- 김영환 팀원 : https://github.com/younghwangit/
-- 양인선 팀원 : 
-- 이상훈 팀원 : 
-- 정소영 팀원 : https://github.com/Jsoyoung/miniproject-RealEstateSeoul.git
-- 황유진 팀원 : https://github.com/yellayujin/
+- 팀장 [나한울](https://github.com/ghkstod/streamlit_minimi)
+- 팀원 [김영환](https://github.com/younghwangit/mulcamp-mini-project)
+- 팀원 [양인선](https://github.com/swflora/miniproject_2024) 
+- 팀원 [이상훈](https://github.com/less927/mp240208) 
+- 팀원 [정소영](https://github.com/Jsoyoung/miniproject-RealEstateSeoul.git)
+- 팀원 [황유진](https://github.com/yellayujin/RealEstateTrackerSeoul)
 
 
 
@@ -67,6 +75,7 @@ streamlit run app.py
 |---|---|---|
 | main | app.py  | for deploy |
 | load_data | data_collect.py | for loading dataset and creating new columns |
+| theme | config.toml | for customizing theme |
 
 
 ### main()
@@ -83,7 +92,7 @@ streamlit run app.py
 - `filtered_data` : 선택된 자치구와 법정동 데이터
 
 - 결과 이미지
-<p align = "center" width = "100%">
+<p align = "center" width = "150%">
   <img src = "./image/image1.png" width = "20%">
   <img src = "./image/image2.png" width = "20%">
   <img src = "./image/image3.png" width = "20%">
