@@ -108,7 +108,7 @@ streamlit run app.py
 
 
 # 발표자료 PDF 
- + [발표 PDF](miniproject_4조.pdf)
+ + [발표 PDF](발표자료.pdf)
 
 
 ## License
